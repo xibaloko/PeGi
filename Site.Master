@@ -6,53 +6,71 @@
 <head runat="server">
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>PeGi</title>
-    
-    <%--Bootstrap Css--%>
-    <link href="Content/bootstrap.min.css" rel="stylesheet" />
 
-    <%--Bootstrap Scripts--%>
-    <script src="Scripts/bootstrap.min.js"></script>
-    <script src="Scripts/popper.min.js"></script>
+    <!-- bootstrap 5 css -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
+
+    <!-- JavaScript Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
+    <!-- css -->
+    <link href="css/style.css" rel="stylesheet" />
 
     <asp:ContentPlaceHolder ID="head" runat="server">
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
-        <div>
 
-            <nav class="navbar navbar-expand-lg navbar-light bg-light">
-                <div class="container-fluid">
-                    <a class="navbar-brand" href="#">Navbar</a>
-                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="navbar-toggler-icon"></span>
-                    </button>
-                    <div class="collapse navbar-collapse" id="navbarNav">
-                        <ul class="navbar-nav">
-                            <li class="nav-item">
-                                <a class="nav-link active" aria-current="page" href="#">Home</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Features</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link" href="#">Pricing</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="nav-link disabled" href="#" tabindex="-1" aria-disabled="true">Disabled</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </nav>
-
+    <nav class="navbar navbar-expand d-flex flex-column align-item-start" id="sidebar">
+        <a href="#" class="navbar-brand text-light mt-5">
+            <div class="display-5 font-weight-bold">PeGi</div>
+        </a>
+        <ul class="navbar-nav d-flex flex-column mt-5 w-100">
+            <li class="nav-item w-100">
+                <a href="PaginaInicial.aspx" class="nav-link text-light pl-4">Início</a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="CadastroContas.aspx" class="nav-link text-light pl-4">Cadastro de Contas</a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="Receitas.aspx" class="nav-link text-light pl-4">Receitas</a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="Despesas.aspx" class="nav-link text-light pl-4">Despesas</a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="Resumos.aspx" class="nav-link text-light pl-4">Resumos</a>
+            </li>
+<%--            <li class="nav-item dropdown w-100">
+                <a href="#" class="nav-link dropdown-toggle text-light pl-4" id="navbarDropdown" role="button" data-toggle="dropdown" aria-expanded="false">Service</a>
+                <ul class="dropdown-menu w-100" aria-labelledby="navbarDropdown">
+                    <li><a href="#" class="dropdown-item text-light pl-4 p-2">Service 01</a></li>
+                    <li><a href="#" class="dropdown-item text-light pl-4 p-2">Service 02</a></li>
+                    <li><a href="#" class="dropdown-item text-light pl-4 p-2">Service 03</a></li>
+                </ul>
+            </li>
+            <li class="nav-item w-100">
+                <a href="#" class="nav-link text-light pl-4">Contact</a>
+            </li>--%>
+        </ul>
+    </nav>
+    <section class="p-4 my-container">
+        <button class="btn my-4" id="menu-btn">Menu</button>
+        <form id="form1" runat="server">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
+        </form>
+    </section>
 
-            <footer>
-                <p>&copy; <%: DateTime.Now.Year %> - PeGi AspNet</p>
-            </footer>
-        </div>
-    </form>
+
+    <script>
+        var menu_btn = document.querySelector("#menu-btn")
+        var sidebar = document.querySelector("#sidebar")
+        var container = document.querySelector(".my-container")
+        menu_btn.addEventListener("click", () => {
+            sidebar.classList.toggle("active-nav")
+            container.classList.toggle("active-cont")
+        })
+    </script>
 </body>
 </html>
