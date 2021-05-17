@@ -17,32 +17,54 @@
             <h1 class="h3 mb-3 font-weight-normal">Cadastre-se</h1>
 
             <div class="row">
-                <div class="col-md-4">
+                <div class="col-md-4 col-sm-12">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="nome">Nome:</span>
-                        <input id="nomeUsuario" runat="server" type="text" class="form-control" aria-describedby="nome"/>
+                        <input id="primeiroNome" runat="server" type="text" class="form-control" aria-describedby="nome" required autofocus/>
                     </div>
                 </div>
-                <div class="col-md-8">
+                <div class="col-md-8 col-sm-12">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="sobrenome">Sobrenome:</span>
-                        <input id="sobrenomeUsuario" runat="server" type="text" class="form-control" aria-describedby="sobrenome"/>
+                        <input id="sobrenomeUsuario" runat="server" type="text" class="form-control" aria-describedby="sobrenome" required/>
                     </div>
                 </div>
             </div>
             <div class="row">
-                <div class="col-md-12">
+                <div class="col-md-12 col-sm-12">
                     <div class="input-group mb-3">
                         <span class="input-group-text" id="email">E-mail:</span>
-                        <input id="emailUsuario" runat="server" type="text" class="form-control" aria-describedby="email"/>
+                        <input id="emailUsuario" runat="server" type="text" class="form-control" aria-describedby="email" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-sm-12">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="usuario">Nome de Usuário:</span>
+                        <input id="username" runat="server" type="text" class="form-control" aria-describedby="usuario" required/>
+                    </div>
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-6 col-sm-12">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="senha">Senha:</span>
+                        <input id="password" runat="server" type="password" class="form-control" aria-describedby="senha" required/>
+                    </div>
+                </div>
+                <div class="col-md-6 col-sm-12">
+                    <div class="input-group mb-3">
+                        <span class="input-group-text" id="confirmaSenha">Confirme a senha:</span>
+                        <input id="confirmaPassword" runat="server" type="password" class="form-control" aria-describedby="confirmaSenha" required/>
                     </div>
                 </div>
             </div>
            
             <div class="row mt-3">
-                <div class="col-md-12" style="text-align:right;">
+                <div class="col-sm-12">
                     <asp:Button ID="BtnCadastrar" runat="server" CssClass="btn btn-lg btn-primary btn-dark" Style="width: 150px" Text="Confirmar" OnClick="BtnCadastrar_Click"  />
-                    <asp:Button ID="BtnCancelar" runat="server" CssClass="btn btn-lg btn-outline-dark" Style="width: 150px" Text="Cancelar" OnClick="BtnCancelar_Click"  />
+                    <asp:Button ID="BtnCancelar" runat="server" CssClass="btn btn-lg btn-outline-dark" Style="width: 150px" Text="Cancelar" OnClick="BtnCancelar_Click" UseSubmitBehavior="false"  />
                 </div>
             </div>
             

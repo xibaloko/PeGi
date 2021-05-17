@@ -30,7 +30,7 @@ namespace PeGi
         {
             if (string.IsNullOrEmpty(username.Value) || string.IsNullOrEmpty(senha.Value))
             {
-                ExibirMensagem(this, TipoMensagem.Alerta, "Usuário ou Senha não informados", "Preencha os campos usuário e senha para efetuar login!");
+                ExibirMensagem(this, TipoMensagem.Alerta, "Usuário ou Senha não informados!");
                 username.Value = string.Empty;
                 senha.Value = string.Empty;
                 username.Focus();
@@ -44,7 +44,7 @@ namespace PeGi
                 }
                 else
                 {
-                    ExibirMensagem(this, TipoMensagem.Alerta, "Usuário ou Senha inválido", "Usuário ou senha encontrado!");
+                    ExibirMensagem(this, TipoMensagem.Alerta, "Usuário ou Senha inválido!");
                 }
             }
         }

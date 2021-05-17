@@ -21,7 +21,7 @@
             <%--<label for="senha" class="sr-only">Senha</label>--%>
             <input type="password" id="senha" runat="server" class="form-control" placeholder="Senha" />
             <div class="mt-3">
-                <a href="#" class="link-dark">Não possui conta?</a>
+                <a href="Cadastro.aspx" class="link-dark">Não possui conta?</a>
             </div>
             <div class="mt-3">
                 <%--<button class="btn btn-lg btn-primary btn-dark" id="btn-entrar" runat="server" style="width:400px" onclick="">Entrar</button>--%>

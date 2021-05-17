@@ -15,7 +15,7 @@ namespace PeGi.util
             Erro = 3
         }
 
-        public static void ExibirMensagem(Page page, TipoMensagem tipo, string titulo, string msg)
+        public static void ExibirMensagem(Page page, TipoMensagem tipo, string msg)
         {
             switch (tipo)
             {
