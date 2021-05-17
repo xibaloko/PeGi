@@ -17,7 +17,22 @@ namespace PeGi.util
 
         public static void ExibirMensagem(Page page, TipoMensagem tipo, string titulo, string msg)
         {
+            switch (tipo)
+            {
+                case TipoMensagem.Alerta:
+                    msg = $"Atenção! \\n\\n {msg}";
+                    break;
+                case TipoMensagem.Sucesso:
+                    msg = $"Sucesso! \\n\\n {msg}";
+                    break;
+                case TipoMensagem.Erro:
+                    msg = $"Erro! \\n\\n {msg}";
+                    break;
+            }
 
+            string script = $"alert('{msg}');";
+
+            ScriptManager.RegisterClientScriptBlock(page, page.GetType(), "Alert", script, true);
         }
     }
 }

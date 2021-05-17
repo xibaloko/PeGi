@@ -17,9 +17,9 @@
             <img class="mt-4 mb-4" src="img/cofrinho.png" height="72" alt="Pegi Logo" />
             <h1 class="h3 mb-3 font-weight-normal">Faça Login</h1>
             <%--<label for="username" class="sr-only">Usuário</label>--%>
-            <input type="text" id="username" class="form-control mb-2" placeholder="Usuário" required autofocus />
+            <input type="text" id="username" runat="server" class="form-control mb-2" placeholder="Usuário" required autofocus />
             <%--<label for="senha" class="sr-only">Senha</label>--%>
-            <input type="password" id="senha" class="form-control" placeholder="Senha" />
+            <input type="password" id="senha" runat="server" class="form-control" placeholder="Senha" />
             <div class="mt-3">
                 <a href="#" class="link-dark">Não possui conta?</a>
             </div>
