@@ -42,10 +42,10 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="DBSession.cs" />
+    <Compile Include="Entity\Usuario.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
-    <Folder Include="Entity\" />
     <Folder Include="Models\" />
     <Folder Include="Services\" />
   </ItemGroup>

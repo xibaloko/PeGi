@@ -74,6 +74,8 @@
     <Content Include="Default.aspx" />
     <Content Include="Despesas.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="img\cofrinho.png" />
+    <Content Include="Login.aspx" />
     <Content Include="PaginaInicial.aspx" />
     <Content Include="Receitas.aspx" />
     <Content Include="Resumos.aspx" />
@@ -104,6 +106,13 @@
     </Compile>
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
+    </Compile>
+    <Compile Include="Login.aspx.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
+      <SubType>ASPXCodeBehind</SubType>
+    </Compile>
+    <Compile Include="Login.aspx.designer.cs">
+      <DependentUpon>Login.aspx</DependentUpon>
     </Compile>
     <Compile Include="PaginaInicial.aspx.cs">
       <DependentUpon>PaginaInicial.aspx</DependentUpon>
