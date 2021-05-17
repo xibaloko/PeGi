@@ -89,7 +89,7 @@ namespace Business
         {
             try
             {
-                conexao = new SqlConnection("Data Source=RUDISON-NOTE\\SQLEXPRESS;Initial Catalog=BDCastelo;Persist Security Info=True;User ID=sa;Password=root");
+                conexao = new SqlConnection("Data Source=.;Initial Catalog=pegi;Integrated Security=True");
 
                 conexao.Open();
 
