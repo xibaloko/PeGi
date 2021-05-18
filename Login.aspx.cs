@@ -1,11 +1,12 @@
-﻿using Business.Services;
+﻿using Business.Models;
+using Business.Services;
 using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.UI;
 using System.Web.UI.WebControls;
-using static PeGi.util.Mensagem;
+using PeGi.util;
 
 namespace PeGi
 {
@@ -30,7 +31,7 @@ namespace PeGi
         {
             if (string.IsNullOrEmpty(username.Value) || string.IsNullOrEmpty(senha.Value))
             {
-                ExibirMensagem(this, TipoMensagem.Alerta, "Usuário ou Senha não informados!");
+                Mensagem.ExibirMensagem(this, Mensagem.TipoMensagem.Alerta, "Usuário ou Senha não informados!");
                 username.Value = string.Empty;
                 senha.Value = string.Empty;
                 username.Focus();
@@ -38,13 +39,16 @@ namespace PeGi
             }
             else
             {
-                if (loginService.ValidarUsuario(username.Value, senha.Value))
+                Usuario user = loginService.ValidarUsuario(username.Value, senha.Value);
+
+                if (user != null)
                 {
+                    SessaoUsuario.CriarSessao(this, user);
                     Response.Redirect("~/Default.aspx");
                 }
                 else
                 {
-                    ExibirMensagem(this, TipoMensagem.Alerta, "Usuário ou Senha inválido!");
+                    Mensagem.ExibirMensagem(this, Mensagem.TipoMensagem.Alerta, "Usuário ou Senha inválido!");
                 }
             }
         }

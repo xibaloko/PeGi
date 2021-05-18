@@ -20,40 +20,44 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
+    <form id="form1" runat="server">
+        <nav class="navbar navbar-expand d-flex flex-column align-item-start active-nav" id="sidebar">
+            <a href="#" class="navbar-brand text-light mt-5">
+                <div class="display-5 font-weight-bold">PeGi</div>
+            </a>
+            <div class="text-light mt-2">
+                <asp:Label ID="BVUsuario" runat="server" CssClass="text-light" />
+            </div>
+            <ul class="navbar-nav d-flex flex-column mt-3 w-100">
+                <li class="nav-item w-100">
+                    <a href="PaginaInicial.aspx" class="nav-link text-light pl-4">Início</a>
+                </li>
+                <li class="nav-item w-100">
+                    <a href="CadastroContas.aspx" class="nav-link text-light pl-4">Cadastro de Contas</a>
+                </li>
+                <li class="nav-item w-100">
+                    <a href="Receitas.aspx" class="nav-link text-light pl-4">Receitas</a>
+                </li>
+                <li class="nav-item w-100">
+                    <a href="Despesas.aspx" class="nav-link text-light pl-4">Despesas</a>
+                </li>
+                <li class="nav-item w-100">
+                    <a href="Resumos.aspx" class="nav-link text-light pl-4">Resumos</a>
+                </li>
+                <li class="nav-item w-100">
+                    <%--<asp:Button ID="BtnSairApp" runat="server" Text="Sair" CssClass="" OnClick="BtnSairApp_Click" />--%>
+                    <a href="Login.aspx" runat="server" class="nav-link text-light pl-4">Sair</a>
+                </li>
+            </ul>
+        </nav>
+        <section class="p-4 my-container active-cont">
+            <button class="btn my-4" id="menu-btn">Menu</button>
 
-    <nav class="navbar navbar-expand d-flex flex-column align-item-start active-nav" id="sidebar">
-        <a href="#" class="navbar-brand text-light mt-5">
-            <div class="display-5 font-weight-bold">PeGi</div>
-        </a>
-        <ul class="navbar-nav d-flex flex-column mt-5 w-100">
-            <li class="nav-item w-100">
-                <a href="PaginaInicial.aspx" class="nav-link text-light pl-4">Início</a>
-            </li>
-            <li class="nav-item w-100">
-                <a href="CadastroContas.aspx" class="nav-link text-light pl-4">Cadastro de Contas</a>
-            </li>
-            <li class="nav-item w-100">
-                <a href="Receitas.aspx" class="nav-link text-light pl-4">Receitas</a>
-            </li>
-            <li class="nav-item w-100">
-                <a href="Despesas.aspx" class="nav-link text-light pl-4">Despesas</a>
-            </li>
-            <li class="nav-item w-100">
-                <a href="Resumos.aspx" class="nav-link text-light pl-4">Resumos</a>
-            </li>
-            <li class="nav-item w-100">
-                <a href="Login.aspx" class="nav-link text-light pl-4">Sair</a>
-            </li>
-        </ul>
-    </nav>
-    <section class="p-4 my-container active-cont">
-        <button class="btn my-4" id="menu-btn">Menu</button>
-        <form id="form1" runat="server">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-        </form>
-    </section>
 
+        </section>
+    </form>
 
     <script>
         var menu_btn = document.querySelector("#menu-btn")

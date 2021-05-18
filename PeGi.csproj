@@ -153,6 +153,7 @@
       <DependentUpon>Site.Master</DependentUpon>
     </Compile>
     <Compile Include="util\Mensagem.cs" />
+    <Compile Include="util\SessaoUsuario.cs" />
   </ItemGroup>
   <ItemGroup>
     <None Include="packages.config" />
