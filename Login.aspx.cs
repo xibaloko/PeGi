@@ -18,7 +18,7 @@ namespace PeGi
         {
             if (!IsPostBack)
             {
-
+                Session.Clear();
             }
         }
 

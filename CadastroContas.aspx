@@ -26,7 +26,8 @@
             <input type="text" runat="server" class="form-control" id="saldoConta" placeholder="Saldo da conta .00">
         </div>
          <div class="col-md-3 align-in-col">
-            <button type="button" class="btn btn-dark align-btn">Cadastrar</button>
+            <%--<button type="button" class="btn btn-dark align-btn">Cadastrar</button>--%>
+             <asp:Button ID="BtnCadastrarConta" runat="server" CssClass="btn btn-dark align-btn" Text="Cadastrar" OnClick="BtnCadastrarConta_Click" />
         </div>
     </div>
 </asp:Content>

@@ -8,7 +8,7 @@ namespace Business
     {
         private SqlCommand comando;
 
-        public Query(String sql, SqlConnection connection)
+        public Query(string sql, SqlConnection connection)
         {
             try
             {
@@ -22,7 +22,7 @@ namespace Business
             }
         }
 
-        public Query(String sql, SqlConnection connection, string conexao)
+        public Query(string sql, SqlConnection connection, string conexao)
         {
             SqlTransaction trans = connection.BeginTransaction("SisCastelo");
             try
@@ -70,7 +70,7 @@ namespace Business
             return dt;
         }
 
-        public Query SetParameter(String nome, object valor)
+        public Query SetParameter(string nome, object valor)
         {
             var parametro = comando.CreateParameter();
             parametro.ParameterName = nome;
@@ -105,7 +105,7 @@ namespace Business
             conexao.Close();
         }
 
-        public Query CreateQuery(String sql)
+        public Query CreateQuery(string sql)
         {
             return new Query(sql, conexao);
         }

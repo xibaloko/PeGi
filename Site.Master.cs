@@ -21,11 +21,5 @@ namespace PeGi
             }
         }
 
-        protected void BtnSairApp_Click(object sender, EventArgs e)
-        {
-            SessaoUsuario.LogoutUsuario(Page);
-
-            Response.Redirect("~/Login.aspx");
-        }
     }
 }
