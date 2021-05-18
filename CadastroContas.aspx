@@ -1,11 +1,32 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CadastroContas.aspx.cs" Inherits="PeGi.CadastroContas" %>
+
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
+    <link href="css/cadastro-contas-styles.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Cadastro de Contas</h1>
-        <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam facilis inventore harum, architecto libero recusandae porro doloremque sunt cum consectetur, autem, vitae ea nihil sapiente voluptas at aut suscipit eos? Sapiente quam culpa aliquam
-            itaque debitis nihil doloremque rem! Praesentium quae, facere nobis impedit quisquam aliquid maxime error? Totam eaque earum fuga aliquam sequi excepturi illum optio quas tempora ea! Eum perspiciatis accusantium distinctio eveniet consequatur
-            sint illo officiis? Saepe dolores fugiat rerum, voluptatem sunt culpa nihil accusantium voluptates unde hic magnam quos est perspiciatis recusandae incidunt quod laborum vitae. Harum modi inventore ea odit eaque ut maiores voluptate nihil
-            aspernatur voluptatibus exercitationem ipsa nam animi neque tempore, eligendi, repellendus praesentium ex voluptatum? Magni laboriosam nemo, assumenda veniam aperiam eum! Eos, ipsum. Eum illo quos quo tempora excepturi reprehenderit numquam
-            voluptas! Blanditiis autem optio labore quisquam culpa, tempora minus eum repudiandae ea voluptatem quia obcaecati velit cum dolorum esse dolorem!</p>
+    <div class="row mt-5">
+        <div class="col-md-3">
+            <label for="nomeConta" class="form-label">Nome Conta:</label>
+            <input type="text" runat="server" class="form-control" id="nomeConta" placeholder="Nome da conta">
+        </div>
+        <div class="col-md-3">
+            <label for="DDLTipoConta" class="form-label">Tipo Conta:</label>
+            <asp:DropDownList ID="DDLTipoConta" runat="server" CssClass="form-select">
+                <asp:ListItem Selected="True" Value="1" Text="Caixa" />
+                <asp:ListItem Value="2" Text="Conta Corrente" />
+                <asp:ListItem Value="3" Text="Poupança" />
+                <asp:ListItem Value="4" Text="Investimentos" />
+            </asp:DropDownList>
+        </div>
+    </div>
+     <div class="row mt-3">
+        <div class="col-md-3">
+            <label for="saldoConta" class="form-label">Saldo Atual:</label>
+            <input type="text" runat="server" class="form-control" id="saldoConta" placeholder="Saldo da conta .00">
+        </div>
+         <div class="col-md-3 align-in-col">
+            <button type="button" class="btn btn-dark align-btn">Cadastrar</button>
+        </div>
+    </div>
 </asp:Content>
