@@ -76,6 +76,8 @@
     <Content Include="Default.aspx" />
     <Content Include="Despesas.aspx" />
     <Content Include="Global.asax" />
+    <Content Include="img\baseline_clear_black_24dp.png" />
+    <Content Include="img\baseline_settings_black_24dp.png" />
     <Content Include="img\cofrinho.png" />
     <Content Include="Login.aspx" />
     <Content Include="PaginaInicial.aspx" />

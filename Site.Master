@@ -20,7 +20,7 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    <form id="form1" runat="server">
+    
         <nav class="navbar navbar-expand d-flex flex-column align-item-start active-nav" id="sidebar">
             <a href="#" class="navbar-brand text-light mt-5">
                 <div class="display-5 font-weight-bold">PeGi</div>
@@ -52,12 +52,12 @@
         </nav>
         <section class="p-4 my-container active-cont">
             <button class="btn my-4" id="menu-btn">Menu</button>
-
+            <form id="form1" runat="server">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-
+            </form>
         </section>
-    </form>
+    
 
     <script>
         var menu_btn = document.querySelector("#menu-btn")
@@ -68,5 +68,6 @@
             container.classList.toggle("active-cont")
         })
     </script>
+
 </body>
 </html>

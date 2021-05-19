@@ -38,13 +38,40 @@ namespace PeGi
             {
                 Mensagem.ExibirMensagem(this, Mensagem.TipoMensagem.Erro, $"Ocorreu um erro ao criar uma nova conta! Erro: {ex.Message}");
             }
+
+            Mensagem.ExibirMensagem(this, Mensagem.TipoMensagem.Sucesso, $"A conta: {conta} foi cadastrada com sucesso!");
+            
+            nomeConta.Value = string.Empty;
+            saldoConta.Value = string.Empty;
+            DDLTipoConta.SelectedValue = "1";
+
+            PreencheGridContas();
         }
 
         private void PreencheGridContas()
         {
             int idUsuario = SessaoUsuario.RecuperarSessao(Page).IdUsuario;
 
-            List<Conta> lstContas = contasService.ExibirContas(idUsuario);
+            try
+            {
+                List<Conta> lstContas = contasService.ExibirContas(idUsuario);
+                GvContas.DataSource = lstContas;
+                GvContas.DataBind();
+            }
+            catch (Exception ex)
+            {
+                Mensagem.ExibirMensagem(this, Mensagem.TipoMensagem.Sucesso, $"Ocorreu um erro ao carregar as contas! Erro: {ex.Message}");
+            }
+        }
+
+        protected void BtnAlterarConta_Command(object sender, CommandEventArgs e)
+        {
+            ScriptManager.RegisterClientScriptBlock(this, GetType(), "Modal", "openModal();", true);
+        }
+
+        protected void BtnDeletarConta_Command(object sender, CommandEventArgs e)
+        {
+
         }
     }
 }

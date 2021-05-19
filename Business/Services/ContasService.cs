@@ -26,7 +26,7 @@ namespace Business.Services
         {
             DBSession session = new DBSession();
 
-            string query = $"SELECT C.NomeConta, C.Saldo, T.TipoConta " +
+            string query = $"SELECT C.IdConta, C.NomeConta, C.Saldo, T.TipoConta " +
                            $"FROM Conta C " +
                            $"INNER JOIN TipoConta T " +
                            $"ON C.fk_TipoConta_IdTipoConta = T.IdTipoConta " +
@@ -41,8 +41,9 @@ namespace Business.Services
             {
                 Conta conta = new Conta()
                 {
+                    IdConta = int.Parse(reader["IdConta"].ToString()),
                     NomeConta = reader["NomeConta"].ToString(),
-                    Saldo = double.Parse(reader["Saldo"].ToString()),
+                    Saldo = decimal.Parse(reader["Saldo"].ToString()),
                     TipoConta = reader["TipoConta"].ToString()
                 };
 
