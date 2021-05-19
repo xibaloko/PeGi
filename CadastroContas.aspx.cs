@@ -66,7 +66,7 @@ namespace PeGi
 
         protected void BtnAlterarConta_Command(object sender, CommandEventArgs e)
         {
-            ScriptManager.RegisterClientScriptBlock(this, GetType(), "Modal", "openModal();", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "myModal", ";$(function() {openModalAlteraConta();});", true);
         }
 
         protected void BtnDeletarConta_Command(object sender, CommandEventArgs e)

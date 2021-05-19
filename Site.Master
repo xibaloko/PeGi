@@ -7,11 +7,15 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
     <title>PeGi</title>
 
+    <%--Jquery--%>
+    <script src="Scripts/jquery-3.6.0.min.js"></script>
+
     <!-- bootstrap 5 css -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-+0n0xVW2eSR5OomGNYDnhzAbDsOXxcvSN1TPprVMTNDbiYZCxYbOOl7+AMvyTG2x" crossorigin="anonymous">
 
     <!-- JavaScript Bundle with Popper -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.1/dist/js/bootstrap.bundle.min.js" integrity="sha384-gtEjrD/SeCtmISkJkNUaaKMoLD0//ElJ19smozuHV6z3Iehds+3Ulb9Bn9Plx0x4" crossorigin="anonymous"></script>
+
 
     <!-- css -->
     <link href="css/style.css" rel="stylesheet" />
@@ -20,53 +24,77 @@
     </asp:ContentPlaceHolder>
 </head>
 <body>
-    
-        <nav class="navbar navbar-expand d-flex flex-column align-item-start active-nav" id="sidebar">
-            <a href="#" class="navbar-brand text-light mt-5">
-                <div class="display-5 font-weight-bold">PeGi</div>
-            </a>
-            <div class="text-light mt-2">
-                <asp:Label ID="BVUsuario" runat="server" CssClass="text-light" />
-            </div>
-            <ul class="navbar-nav d-flex flex-column mt-3 w-100">
-                <li class="nav-item w-100">
-                    <a href="PaginaInicial.aspx" class="nav-link text-light pl-4">Início</a>
-                </li>
-                <li class="nav-item w-100">
-                    <a href="CadastroContas.aspx" class="nav-link text-light pl-4">Cadastro de Contas</a>
-                </li>
-                <li class="nav-item w-100">
-                    <a href="Receitas.aspx" class="nav-link text-light pl-4">Receitas</a>
-                </li>
-                <li class="nav-item w-100">
-                    <a href="Despesas.aspx" class="nav-link text-light pl-4">Despesas</a>
-                </li>
-                <li class="nav-item w-100">
-                    <a href="Resumos.aspx" class="nav-link text-light pl-4">Resumos</a>
-                </li>
-                <li class="nav-item w-100">
-                    <%--<asp:Button ID="BtnSairApp" runat="server" Text="Sair" CssClass="" OnClick="BtnSairApp_Click" />--%>
-                    <a href="Login.aspx" runat="server" class="nav-link text-light pl-4">Sair</a>
-                </li>
-            </ul>
-        </nav>
-        <section class="p-4 my-container active-cont">
-            <button class="btn my-4" id="menu-btn">Menu</button>
-            <form id="form1" runat="server">
+
+    <nav class="navbar navbar-expand d-flex flex-column align-item-start active-nav" id="sidebar">
+        <a href="#" class="navbar-brand text-light mt-5">
+            <div class="display-5 font-weight-bold">PeGi</div>
+        </a>
+        <div class="text-light mt-2">
+            <asp:Label ID="BVUsuario" runat="server" CssClass="text-light" />
+        </div>
+        <ul class="navbar-nav d-flex flex-column mt-3 w-100">
+            <li class="nav-item w-100">
+                <a href="PaginaInicial.aspx" class="nav-link text-light pl-4">Início</a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="CadastroContas.aspx" class="nav-link text-light pl-4">Cadastro de Contas</a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="Receitas.aspx" class="nav-link text-light pl-4">Receitas</a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="Despesas.aspx" class="nav-link text-light pl-4">Despesas</a>
+            </li>
+            <li class="nav-item w-100">
+                <a href="Resumos.aspx" class="nav-link text-light pl-4">Resumos</a>
+            </li>
+            <li class="nav-item w-100">
+                <%--<asp:Button ID="BtnSairApp" runat="server" Text="Sair" CssClass="" OnClick="BtnSairApp_Click" />--%>
+                <a href="Login.aspx" runat="server" class="nav-link text-light pl-4">Sair</a>
+            </li>
+        </ul>
+    </nav>
+    <section class="p-4 my-container active-cont">
+        <button class="btn my-4" id="menu-btn">Menu</button>
+        <form id="form1" runat="server">
             <asp:ContentPlaceHolder ID="MainContent" runat="server">
             </asp:ContentPlaceHolder>
-            </form>
-        </section>
-    
+
+
+
+            <%--MODAL TESTE--%>
+            <div class="modal fade" id="myModal" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+                <div class="modal-dialog">
+                    <div class="modal-content">
+                        <div class="modal-header">
+                            <h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+                            <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                        </div>
+                        <div class="modal-body">
+                            ...
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-primary">Understood</button>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </form>
+    </section>
 
     <script>
-        var menu_btn = document.querySelector("#menu-btn")
-        var sidebar = document.querySelector("#sidebar")
+        var menu_btn = document.querySelector("#menu-btn");
+        var sidebar = document.querySelector("#sidebar");
         var container = document.querySelector(".my-container")
         menu_btn.addEventListener("click", () => {
             sidebar.classList.toggle("active-nav")
             container.classList.toggle("active-cont")
-        })
+        });
+
+        function openModalAlteraConta() {
+            $('#myModal').modal('show')
+        }
     </script>
 
 </body>
