@@ -10,8 +10,7 @@
     <div class="row mt-5">
         <div class="col-md-3">
             <label for="DDLContaSelecionada" class="form-label">Conta:</label>
-            <asp:DropDownList ID="DDLContaSelecionada" runat="server" CssClass="form-select">
-            </asp:DropDownList>
+            <asp:DropDownList ID="DDLContaSelecionada" runat="server" CssClass="form-select" />
         </div>
         <div class="col-md-6">
             <label for="TxtBoxDescricao" class="form-label">Descrição:</label>
