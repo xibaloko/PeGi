@@ -47,4 +47,41 @@
         </div>
     </div>
 
+    <%--MODAL ALTERAR CONTA--%>
+    <div class="modal fade" id="modalAlterConta" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="staticBackdropLabel" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="staticBackdropLabel">Alterar Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <div class="row">
+                        <div class="col-sm-12">
+                            <label for="nomeConta" class="form-label">Nome Conta:</label>
+                            <input type="text" runat="server" class="form-control" id="ModalAlteraNomeConta" placeholder="Nome da conta">
+                        </div>
+                    </div>
+                    <div class="row mt-2">
+                        <div class="col-sm-12">
+                            <label for="DDLModalAlteraTipoConta" class="form-label">Tipo Conta:</label>
+                            <asp:DropDownList ID="DDLModalAlteraTipoConta" runat="server" CssClass="form-select">
+                                <asp:ListItem Selected="True" Value="1" Text="Caixa" />
+                                <asp:ListItem Value="2" Text="Conta Corrente" />
+                                <asp:ListItem Value="3" Text="Poupança" />
+                                <asp:ListItem Value="4" Text="Investimentos" />
+                            </asp:DropDownList>
+                        </div>
+                    </div>
+                    <asp:HiddenField ID="HiddenFieldIdConta" runat="server" />
+                </div>
+                <div class="modal-footer">
+                    <%--<button type="button" class="btn btn-primary btn-dark">Confirmar</button>--%>
+                    <asp:Button ID="BtnConfirmaAlteraConta" runat="server" CssClass="btn btn-primary btn-dark" Text="Confirmar" OnClick="BtnConfirmaAlteraConta_Click" />
+                    <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
 </asp:Content>

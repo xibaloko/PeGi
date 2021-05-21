@@ -66,12 +66,21 @@ namespace PeGi
 
         protected void BtnAlterarConta_Command(object sender, CommandEventArgs e)
         {
+            // PEGANDO O IDCONTA PARA ALTERAÇÃO
+            HiddenFieldIdConta.Value = e.CommandArgument.ToString();
             ScriptManager.RegisterStartupScript(this, GetType(), "myModal", ";$(function() {openModalAlteraConta();});", true);
+        }
+
+        protected void BtnConfirmaAlteraConta_Click(object sender, EventArgs e)
+        {
+
         }
 
         protected void BtnDeletarConta_Command(object sender, CommandEventArgs e)
         {
 
         }
+
+        
     }
 }
