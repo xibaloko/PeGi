@@ -72,6 +72,7 @@
     <Content Include="Cadastro.aspx" />
     <Content Include="CadastroContas.aspx" />
     <Content Include="css\cadastro-contas-styles.css" />
+    <Content Include="css\receitas-styles.css" />
     <Content Include="css\style.css" />
     <Content Include="Default.aspx" />
     <Content Include="Despesas.aspx" />

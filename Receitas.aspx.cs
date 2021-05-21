@@ -13,5 +13,10 @@ namespace PeGi
         {
 
         }
+
+        protected void BtnCadastrarConta_Click(object sender, EventArgs e)
+        {
+
+        }
     }
 }
