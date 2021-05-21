@@ -94,5 +94,23 @@ namespace PeGi
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.WebControls.Button BtnConfirmaAlteraConta;
+
+        /// <summary>
+        /// Controle HiddenFieldModalExcluirConta.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.HiddenField HiddenFieldModalExcluirConta;
+
+        /// <summary>
+        /// Controle BtnConfirmaExclusaoConta.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Button BtnConfirmaExclusaoConta;
     }
 }

@@ -60,7 +60,7 @@ namespace PeGi
             }
             catch (Exception ex)
             {
-                Mensagem.ExibirMensagem(this, Mensagem.TipoMensagem.Sucesso, $"Ocorreu um erro ao carregar as contas! Erro: {ex.Message}");
+                Mensagem.ExibirMensagem(this, Mensagem.TipoMensagem.Erro, $"Ocorreu um erro ao carregar as contas! Erro: {ex.Message}");
             }
         }
 
@@ -73,14 +73,44 @@ namespace PeGi
 
         protected void BtnConfirmaAlteraConta_Click(object sender, EventArgs e)
         {
+            int idConta = int.Parse(HiddenFieldIdConta.Value);
+            string nomeConta = ModalAlteraNomeConta.Value;
+            int idTipoConta = int.Parse(DDLModalAlteraTipoConta.SelectedValue);
 
+            try
+            {
+                contasService.AlterarConta(idConta, nomeConta, idTipoConta);
+            }
+            catch (Exception ex)
+            {
+                Mensagem.ExibirMensagem(this, Mensagem.TipoMensagem.Erro, $"Ocorreu um erro ao alterar a conta! Erro: {ex.Message}");
+            }
+
+            PreencheGridContas();
         }
 
         protected void BtnDeletarConta_Command(object sender, CommandEventArgs e)
         {
-
+            // PEGANDO O IDCONTA PARA ALTERAÇÃO
+            HiddenFieldModalExcluirConta.Value = e.CommandArgument.ToString();
+            ScriptManager.RegisterStartupScript(this, GetType(), "myModal", ";$(function() {openModalExcluirConta();});", true);
         }
 
-        
+        protected void BtnConfirmaExclusaoConta_Click(object sender, EventArgs e)
+        {
+            int idConta = int.Parse(HiddenFieldModalExcluirConta.Value);
+            int idUsuario = SessaoUsuario.RecuperarSessao(Page).IdUsuario;
+
+            try
+            {
+                contasService.DeletarConta(idConta, idUsuario);
+            }
+            catch (Exception ex)
+            {
+                Mensagem.ExibirMensagem(this, Mensagem.TipoMensagem.Erro, $"Ocorreu um erro ao excluir a conta! Erro: {ex.Message}");
+            }
+
+            PreencheGridContas();
+        }
     }
 }

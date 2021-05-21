@@ -78,7 +78,28 @@
                 <div class="modal-footer">
                     <%--<button type="button" class="btn btn-primary btn-dark">Confirmar</button>--%>
                     <asp:Button ID="BtnConfirmaAlteraConta" runat="server" CssClass="btn btn-primary btn-dark" Text="Confirmar" OnClick="BtnConfirmaAlteraConta_Click" />
-                    <button type="button" class="btn btn-secondary btn-danger" data-bs-dismiss="modal">Cancelar</button>
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <%--MODAL DELETA CONTA--%>
+    <div class="modal fade" id="modalDeletaConta" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalExcluiContalTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalExcluiContalTitle">Excluir Conta</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Tem certeza que deseja excluir esta conta? Todos os lançamentos serão perdidos!</h6>
+                    <asp:HiddenField ID="HiddenFieldModalExcluirConta" runat="server" />
+                </div>
+                <div class="modal-footer">
+                    <%--<button type="button" class="btn btn-primary btn-dark">Confirmar</button>--%>
+                    <asp:Button ID="BtnConfirmaExclusaoConta" runat="server" CssClass="btn btn-primary btn-danger" Text="Confirmar" OnClick="BtnConfirmaExclusaoConta_Click" />
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
                 </div>
             </div>
         </div>

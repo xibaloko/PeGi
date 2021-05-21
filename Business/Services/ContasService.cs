@@ -1,11 +1,6 @@
 ﻿using Business.Models;
-using System;
 using System.Collections.Generic;
 using System.Data;
-using System.Globalization;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
 
 namespace Business.Services
 {
@@ -20,6 +15,53 @@ namespace Business.Services
 
             Query executar = session.CreateQuery(query);
             executar.ExecuteNonQuery();
+        }
+
+        public void AlterarConta(int idConta, string nomeConta, int idTipoConta)
+        {
+            DBSession session = new DBSession();
+
+            string query = $"UPDATE Conta " +
+                           $"SET NomeConta = '{nomeConta}', fk_TipoConta_IdTipoConta = {idTipoConta} " +
+                           $"WHERE IdConta = {idConta};";
+
+            Query executar = session.CreateQuery(query);
+            executar.ExecuteNonQuery();
+        }
+
+        public void DeletarConta(int idConta, int idUsuario)
+        {
+            DBSession session = new DBSession();
+
+            string query = $"SELECT L.IdLancamento " +
+                           $"FROM Lancamentos L " +
+                           $"WHERE L.fk_Conta_IdConta = {idConta}";
+
+            Query executar = session.CreateQuery(query);
+            IDataReader reader = executar.ExecuteQuery();
+
+            string queryDeletar;
+
+            using (reader)
+            {
+                if (reader.Read())
+                {
+                    queryDeletar = $"DELETE FROM Lancamentos " +
+                                   $"WHERE fk_Conta_IdConta = {idConta}; " +
+                                   $"DELETE FROM Conta " +
+                                   $"WHERE fk_Usuario_IdUsuario = {idUsuario} " +
+                                   $"AND IdConta = {idConta};";
+                }
+                else
+                {
+                    queryDeletar = $"DELETE FROM Conta " +
+                                   $"WHERE fk_Usuario_IdUsuario = {idUsuario} " +
+                                   $"AND IdConta = {idConta};";
+                }
+            }
+
+            Query deletar = session.CreateQuery(queryDeletar);
+            deletar.ExecuteNonQuery();
         }
 
         public List<Conta> ExibirContas(int idUsuario)
@@ -51,7 +93,7 @@ namespace Business.Services
             };
 
             return contas;
-        } 
+        }
 
 
     }

@@ -75,8 +75,15 @@
             container.classList.toggle("active-cont")
         });
 
+
+        //Abrir Janelas Modais
+
         function openModalAlteraConta() {
             $('#modalAlterConta').modal('show')
+        }
+
+        function openModalExcluirConta() {
+            $('#modalDeletaConta').modal('show')
         }
     </script>
 
