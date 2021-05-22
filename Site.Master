@@ -85,6 +85,12 @@
         function openModalExcluirConta() {
             $('#modalDeletaConta').modal('show')
         }
+
+        function openModalDeletarLanc() {
+            $('#modalDeletaLancamento').modal('show')
+        }
+
+        
     </script>
 
 </body>
