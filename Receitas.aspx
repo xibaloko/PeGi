@@ -34,7 +34,7 @@
             <asp:GridView ID="GvLancamentosReceitas" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover">
                 <Columns>
                     <asp:BoundField HeaderText="Descrição" DataField="Descricao" />
-                    <asp:BoundField HeaderText="Data Lançamento" DataField="DataLancamento" />
+                    <asp:BoundField HeaderText="Data Lançamento" DataField="DataLancamento" DataFormatString="{0:dd/MM/yyyy}" />
                     <asp:BoundField HeaderText="Valor" DataField="Valor" />
                     <asp:TemplateField HeaderText="Ação">
                         <ItemTemplate>
