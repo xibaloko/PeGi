@@ -42,13 +42,21 @@ body {
     transition: 0.4s;
 }
 
-
 /* for navbar */
 
 .active-nav {
     margin-left: 0;
 }
 
+/* for pages receitas, despesas e cadastro de contas */
+
+.align-btn {
+    margin-top: 30px;
+}
+
+.align-in-col {
+    text-align: right;
+}
 
 /* for main section */
 

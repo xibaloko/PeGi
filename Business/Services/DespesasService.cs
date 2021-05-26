@@ -2,10 +2,13 @@
 using System;
 using System.Collections.Generic;
 using System.Data;
+using System.Linq;
+using System.Text;
+using System.Threading.Tasks;
 
 namespace Business.Services
 {
-    public class ReceitasService
+    public class DespesasService
     {
         public List<DDListConta> CarregaListaContas(int idUsuario)
         {
@@ -25,7 +28,7 @@ namespace Business.Services
                 DDListConta conta = new DDListConta()
                 {
                     IdConta = int.Parse(reader["IdConta"].ToString()),
-                    NomeConta= reader["NomeConta"].ToString()
+                    NomeConta = reader["NomeConta"].ToString()
                 };
 
                 contas.Add(conta);
@@ -34,12 +37,12 @@ namespace Business.Services
             return contas;
         }
 
-        public void LancarReceita(int idConta, string descricao, string valor, string dataLancamento)
+        public void LancarDespesa(int idConta, string descricao, string valor, string dataLancamento)
         {
             DBSession session = new DBSession();
 
             string query = $"INSERT INTO Lancamentos (Descricao, Valor, DataLancamento, fk_Conta_IdConta, fk_TipoLancamento_IdTipoLancamento) " +
-                           $"VALUES('{descricao}', {valor}, CONVERT(DATETIME, '{dataLancamento}', 121), {idConta}, 1)";
+                           $"VALUES('{descricao}', {valor}, CONVERT(DATETIME, '{dataLancamento}', 121), {idConta}, 2)";
 
             Query executar = session.CreateQuery(query);
             executar.ExecuteNonQuery();
@@ -52,7 +55,7 @@ namespace Business.Services
             string query = $"SELECT L.IdLancamento, L.Descricao, L.Valor, L.DataLancamento " +
                            $"FROM Lancamentos L " +
                            $"WHERE L.fk_Conta_IdConta = {idConta} " +
-                           $"AND L.fk_TipoLancamento_IdTipoLancamento = 1 " +
+                           $"AND L.fk_TipoLancamento_IdTipoLancamento = 2 " +
                            $"AND DATEDIFF(day, L.DataLancamento , GETDATE()) < 30";
 
             Query executar = session.CreateQuery(query);
@@ -62,7 +65,7 @@ namespace Business.Services
 
             while (reader.Read())
             {
-                Lancamento receita = new Lancamento()
+                Lancamento despesa = new Lancamento()
                 {
                     IdLancamento = int.Parse(reader["IdLancamento"].ToString()),
                     Descricao = reader["Descricao"].ToString(),
@@ -70,7 +73,7 @@ namespace Business.Services
                     DataLancamento = DateTime.Parse(reader["DataLancamento"].ToString())
                 };
 
-                lancamentos.Add(receita);
+                lancamentos.Add(despesa);
             };
 
             return lancamentos;

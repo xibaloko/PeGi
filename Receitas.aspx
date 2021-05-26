@@ -1,7 +1,6 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="Receitas.aspx.cs" Inherits="PeGi.Receitas" %>
 
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="css/receitas-styles.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Receitas</h1>
@@ -55,7 +54,7 @@
     </div>
 
     <%--MODAL DELETA CONTA--%>
-    <div class="modal fade" id="modalDeletaLancamento" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalExcluiLancamentoTitle" aria-hidden="true">
+    <div class="modal fade" id="modalDeletaLancamentoRec" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalExcluiLancamentoTitle" aria-hidden="true">
         <div class="modal-dialog">
             <div class="modal-content">
                 <div class="modal-header">

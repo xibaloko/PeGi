@@ -2,7 +2,7 @@
 
 namespace Business.Models
 {
-    public class LancamentosReceita
+    public class Lancamento
     {
         public int IdLancamento { get; set; }
         public string Descricao { get; set; }

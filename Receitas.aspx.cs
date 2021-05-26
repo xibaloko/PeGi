@@ -26,7 +26,7 @@ namespace PeGi
         private void CarregarGridLancamentos()
         {
             int idConta = int.Parse(DDLContaSelecionada.SelectedValue);
-            List<LancamentosReceita> lstLancamentos = receitasService.ExibirLancamentos(idConta);
+            List<Lancamento> lstLancamentos = receitasService.ExibirLancamentos(idConta);
 
             try
             {
@@ -91,7 +91,7 @@ namespace PeGi
         protected void BtnDeletarLancamento_Command(object sender, CommandEventArgs e)
         {
             HiddenFieldModalExcluirLanc.Value = e.CommandArgument.ToString();
-            ScriptManager.RegisterStartupScript(this, GetType(), "myModal", ";$(function() {openModalDeletarLanc();});", true);
+            ScriptManager.RegisterStartupScript(this, GetType(), "myModal", ";$(function() {openModalDeletarLancRec();});", true);
         }
 
         protected void BtnConfirmaExclusaoLanc_Click(object sender, EventArgs e)

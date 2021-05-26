@@ -75,7 +75,6 @@
             container.classList.toggle("active-cont")
         });
 
-
         //Abrir Janelas Modais
 
         function openModalAlteraConta() {
@@ -86,10 +85,13 @@
             $('#modalDeletaConta').modal('show')
         }
 
-        function openModalDeletarLanc() {
-            $('#modalDeletaLancamento').modal('show')
+        function openModalDeletarLancRec() {
+            $('#modalDeletaLancamentoRec').modal('show')
         }
 
+        function openModalDeletarLancDes() {
+            $('#modalDeletaLancamentoDes').modal('show')
+        }
         
     </script>
 

@@ -1,7 +1,5 @@
 ﻿<%@ Page Title="" Language="C#" MasterPageFile="~/Site.Master" AutoEventWireup="true" CodeBehind="CadastroContas.aspx.cs" Inherits="PeGi.CadastroContas" %>
-
 <asp:Content ID="Content1" ContentPlaceHolderID="head" runat="server">
-    <link href="css/cadastro-contas-styles.css" rel="stylesheet" />
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Cadastro de Contas</h1>

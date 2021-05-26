@@ -3,9 +3,73 @@
 </asp:Content>
 <asp:Content ID="Content2" ContentPlaceHolderID="MainContent" runat="server">
     <h1>Despesas</h1>
-        <p class="text-dark">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ipsam facilis inventore harum, architecto libero recusandae porro doloremque sunt cum consectetur, autem, vitae ea nihil sapiente voluptas at aut suscipit eos? Sapiente quam culpa aliquam
-            itaque debitis nihil doloremque rem! Praesentium quae, facere nobis impedit quisquam aliquid maxime error? Totam eaque earum fuga aliquam sequi excepturi illum optio quas tempora ea! Eum perspiciatis accusantium distinctio eveniet consequatur
-            sint illo officiis? Saepe dolores fugiat rerum, voluptatem sunt culpa nihil accusantium voluptates unde hic magnam quos est perspiciatis recusandae incidunt quod laborum vitae. Harum modi inventore ea odit eaque ut maiores voluptate nihil
-            aspernatur voluptatibus exercitationem ipsa nam animi neque tempore, eligendi, repellendus praesentium ex voluptatum? Magni laboriosam nemo, assumenda veniam aperiam eum! Eos, ipsum. Eum illo quos quo tempora excepturi reprehenderit numquam
-            voluptas! Blanditiis autem optio labore quisquam culpa, tempora minus eum repudiandae ea voluptatem quia obcaecati velit cum dolorum esse dolorem!</p>
+    <h3>Lance suas despesas mensais</h3>
+
+    <div class="row mt-5">
+        <div class="col-md-3">
+            <label for="DDLContaSelecionada" class="form-label">Conta:</label>
+            <asp:DropDownList ID="DDLContaSelecionada" runat="server" CssClass="form-select" AutoPostBack="true" OnSelectedIndexChanged="DDLContaSelecionada_SelectedIndexChanged" />
+        </div>
+        <div class="col-md-6">
+            <label for="TxtBoxDescricao" class="form-label">Descrição:</label>
+            <input type="text" runat="server" class="form-control" id="TxtBoxDescricao" placeholder="Breve descrição da despesa">
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-3">
+            <label for="TxtBoxValor" class="form-label">Valor:</label>
+            <input type="text" runat="server" class="form-control" id="TxtBoxValor" placeholder="Valor da despesa .00">
+        </div>
+        <div class="col-md-3">
+            <label for="TxtBoxData" class="form-label">Data:</label>
+            <input type="date" runat="server" class="form-control" id="TxtBoxData" placeholder="Data do pagamento">
+        </div>
+        <div class="col-md-3 align-in-col">
+            <asp:Button ID="BtnLancarDespesa" runat="server" CssClass="btn btn-dark align-btn" Text="Lançar" OnClick="BtnLancarDespesa_Click" />
+        </div>
+    </div>
+    <div class="row mt-5">
+        <div class="col-md-9">
+            <asp:GridView ID="GvLancamentosDespesas" runat="server" AutoGenerateColumns="false" CssClass="table table-striped table-hover">
+                <Columns>
+                    <asp:BoundField HeaderText="Descrição" DataField="Descricao" />
+                    <asp:BoundField HeaderText="Data Lançamento" DataField="DataLancamento" />
+                    <asp:BoundField HeaderText="Valor" DataField="Valor" />
+                    <asp:TemplateField HeaderText="Ação">
+                        <ItemTemplate>
+                            <asp:ImageButton ID="BtnDeletarLancamento" runat="server" ImageUrl="img/baseline_clear_black_24dp.png" CommandArgument='<%#Eval("IdLancamento")%>' OnCommand="BtnDeletarLancamento_Command" />
+                        </ItemTemplate>
+                    </asp:TemplateField>
+                </Columns>
+            </asp:GridView>
+        </div>
+    </div>
+    <div class="row mt-3">
+        <div class="col-md-9 align-in-col">
+            <h5>
+                <asp:Literal ID="lblTotalDespesas" runat="server" />
+            </h5>
+        </div>
+    </div>
+
+    <%--MODAL DELETA CONTA--%>
+    <div class="modal fade" id="modalDeletaLancamentoDes" role="dialog" data-bs-backdrop="static" data-bs-keyboard="false" tabindex="-1" aria-labelledby="modalExcluiLancamentoTitle" aria-hidden="true">
+        <div class="modal-dialog">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalExcluiLancamentoTitle">Excluir Lançamento</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <h6>Tem certeza que deseja excluir esse lançamento?</h6>
+                    <asp:HiddenField ID="HiddenFieldModalExcluirLanc" runat="server" />
+                </div>
+                <div class="modal-footer">
+                    <%--<button type="button" class="btn btn-primary btn-dark">Confirmar</button>--%>
+                    <asp:Button ID="BtnConfirmaExclusaoLanc" runat="server" CssClass="btn btn-primary btn-danger" Text="Confirmar" OnClick="BtnConfirmaExclusaoLanc_Click" />
+                    <button type="button" class="btn btn-outline-secondary" data-bs-dismiss="modal">Cancelar</button>
+                </div>
+            </div>
+        </div>
+    </div>
 </asp:Content>
