@@ -21,6 +21,11 @@ namespace PeGi
                 TxtBoxData.Value = DateTime.Now.ToString("yyyy-MM-dd");
                 CarregarGridLancamentos();
             }
+
+            LblErroDescricao.Visible = false;
+            LblErroData.Visible = false;
+            LblErroSaldo.Visible = false;
+            LblErroSaldoNDecimal.Visible = false;
         }
 
         private void CarregarGridLancamentos()
@@ -68,6 +73,31 @@ namespace PeGi
 
         protected void BtnLancarReceita_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(TxtBoxDescricao.Value))
+            {
+                LblErroDescricao.Visible = true;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(TxtBoxData.Value))
+            {
+                LblErroData.Visible = true;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(TxtBoxValor.Value))
+            {
+                LblErroSaldo.Visible = true;
+                return;
+            }
+
+            if (UsoGeral.CampoNaoDecimal(TxtBoxValor.Value))
+            {
+                LblErroSaldoNDecimal.Visible = true;
+                return;
+            }
+            
+
             int idConta = int.Parse(DDLContaSelecionada.SelectedValue);
             string descricao = TxtBoxDescricao.Value;
             string valor = TxtBoxValor.Value;

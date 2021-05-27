@@ -7,6 +7,7 @@
         <div class="col-md-3">
             <label for="nomeConta" class="form-label">Nome Conta:</label>
             <input type="text" runat="server" class="form-control" id="nomeConta" placeholder="Nome da conta">
+            <asp:Label ID="LblErroNomeConta" runat="server" Text="Preencha este campo" ForeColor="Red" Visible="false" />
         </div>
         <div class="col-md-3">
             <label for="DDLTipoConta" class="form-label">Tipo Conta:</label>
@@ -22,6 +23,8 @@
         <div class="col-md-3">
             <label for="saldoConta" class="form-label">Saldo Atual:</label>
             <input type="text" runat="server" class="form-control" id="saldoConta" placeholder="Saldo da conta .00">
+            <asp:Label ID="LblErroSaldo" runat="server" Text="Preencha este campo" ForeColor="Red" Visible="false" />
+            <asp:Label ID="LblErroSaldoNDecimal" runat="server" Text="Preencha o campo corretamente" ForeColor="Red" Visible="false" />
         </div>
         <div class="col-md-3 align-in-col">
             <asp:Button ID="BtnCadastrarConta" runat="server" CssClass="btn btn-dark align-btn" Text="Cadastrar" OnClick="BtnCadastrarConta_Click" />

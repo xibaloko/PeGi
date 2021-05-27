@@ -24,6 +24,15 @@ namespace PeGi
         protected global::System.Web.UI.HtmlControls.HtmlInputText nomeConta;
 
         /// <summary>
+        /// Controle LblErroNomeConta.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblErroNomeConta;
+
+        /// <summary>
         /// Controle DDLTipoConta.
         /// </summary>
         /// <remarks>
@@ -40,6 +49,24 @@ namespace PeGi
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputText saldoConta;
+
+        /// <summary>
+        /// Controle LblErroSaldo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblErroSaldo;
+
+        /// <summary>
+        /// Controle LblErroSaldoNDecimal.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblErroSaldoNDecimal;
 
         /// <summary>
         /// Controle BtnCadastrarConta.

@@ -18,10 +18,33 @@ namespace PeGi
             {
                 PreencheGridContas();
             }
+
+            LblErroNomeConta.Visible = false;
+            LblErroSaldo.Visible = false;
+            LblErroSaldoNDecimal.Visible = false;
         }
 
         protected void BtnCadastrarConta_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(nomeConta.Value))
+            {
+                LblErroNomeConta.Visible = true;
+                return;
+            }
+
+            if (string.IsNullOrEmpty(saldoConta.Value))
+            {
+                LblErroSaldo.Visible = true;
+                return;
+            }
+
+            if (UsoGeral.CampoNaoDecimal(saldoConta.Value))
+            {
+                LblErroSaldoNDecimal.Visible = true;
+                return;
+            }
+
+
             string conta = nomeConta.Value;
             string saldo = saldoConta.Value;
             int tipoConta = int.Parse(DDLTipoConta.SelectedValue);
@@ -35,8 +58,6 @@ namespace PeGi
             {
                 Mensagem.ExibirMensagem(this, Mensagem.TipoMensagem.Erro, $"Ocorreu um erro ao criar uma nova conta! Erro: {ex.Message}");
             }
-
-            Mensagem.ExibirMensagem(this, Mensagem.TipoMensagem.Sucesso, $"A conta: {conta} foi cadastrada com sucesso!");
             
             nomeConta.Value = string.Empty;
             saldoConta.Value = string.Empty;

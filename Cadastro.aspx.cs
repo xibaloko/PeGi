@@ -19,6 +19,12 @@ namespace PeGi
 
         protected void BtnCadastrar_Click(object sender, EventArgs e)
         {
+            if (string.IsNullOrEmpty(primeiroNome.Value) || string.IsNullOrEmpty(sobrenomeUsuario.Value) || string.IsNullOrEmpty(emailUsuario.Value) || string.IsNullOrEmpty(username.Value) || string.IsNullOrEmpty(password.Value) || string.IsNullOrEmpty(confirmaPassword.Value))
+            {
+                ExibirMensagem(this, TipoMensagem.Erro, "Preencha todos os campos!");
+                return;
+            }
+
             string usuario = username.Value;
             string senha = password.Value;
             string confirmaSenha = confirmaPassword.Value;

@@ -58,6 +58,12 @@ body {
     text-align: right;
 }
 
+/* for page resumos */
+
+.btn-pesq-periodo{
+    width: 80%;
+}
+
 /* for main section */
 
 .active-cont {

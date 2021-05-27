@@ -33,6 +33,15 @@ namespace PeGi
         protected global::System.Web.UI.HtmlControls.HtmlInputText TxtBoxDescricao;
 
         /// <summary>
+        /// Controle LblErroDescricao.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblErroDescricao;
+
+        /// <summary>
         /// Controle TxtBoxValor.
         /// </summary>
         /// <remarks>
@@ -42,6 +51,24 @@ namespace PeGi
         protected global::System.Web.UI.HtmlControls.HtmlInputText TxtBoxValor;
 
         /// <summary>
+        /// Controle LblErroSaldo.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblErroSaldo;
+
+        /// <summary>
+        /// Controle LblErroSaldoNDecimal.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblErroSaldoNDecimal;
+
+        /// <summary>
         /// Controle TxtBoxData.
         /// </summary>
         /// <remarks>
@@ -49,6 +76,15 @@ namespace PeGi
         /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
         /// </remarks>
         protected global::System.Web.UI.HtmlControls.HtmlInputGenericControl TxtBoxData;
+
+        /// <summary>
+        /// Controle LblErroData.
+        /// </summary>
+        /// <remarks>
+        /// Campo gerado automaticamente.
+        /// Modificar a declaração do campo de movimento do arquivo de designer para o arquivo code-behind.
+        /// </remarks>
+        protected global::System.Web.UI.WebControls.Label LblErroData;
 
         /// <summary>
         /// Controle BtnLancarReceita.

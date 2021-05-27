@@ -14,16 +14,20 @@
         <div class="col-md-6">
             <label for="TxtBoxDescricao" class="form-label">Descrição:</label>
             <input type="text" runat="server" class="form-control" id="TxtBoxDescricao" placeholder="Breve descrição da receita">
+            <asp:Label ID="LblErroDescricao" runat="server" Text="Preencha este campo" ForeColor="Red" Visible="false" />
         </div>
     </div>
     <div class="row mt-3">
         <div class="col-md-3">
             <label for="TxtBoxValor" class="form-label">Valor:</label>
             <input type="text" runat="server" class="form-control" id="TxtBoxValor" placeholder="Valor da receita .00">
+            <asp:Label ID="LblErroSaldo" runat="server" Text="Preencha este campo" ForeColor="Red" Visible="false" />
+            <asp:Label ID="LblErroSaldoNDecimal" runat="server" Text="Preencha o campo corretamente" ForeColor="Red" Visible="false" />
         </div>
         <div class="col-md-3">
             <label for="TxtBoxData" class="form-label">Data:</label>
             <input type="date" runat="server" class="form-control" id="TxtBoxData" placeholder="Data do recebimento">
+            <asp:Label ID="LblErroData" runat="server" Text="Preencha este campo" ForeColor="Red" Visible="false" />
         </div>
         <div class="col-md-3 align-in-col">
             <asp:Button ID="BtnLancarReceita" runat="server" CssClass="btn btn-dark align-btn" Text="Lançar" OnClick="BtnLancarReceita_Click" />
